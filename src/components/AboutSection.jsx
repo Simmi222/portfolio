@@ -10,7 +10,7 @@ export const AboutSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* Left Side */}
-          <div className="space-y-6">
+          <div className="space-y-6 text-left">
             <h3 className="text-2xl font-semibold">
               Full Stack Developer & Backend Developer
             </h3>
@@ -26,7 +26,7 @@ export const AboutSection = () => {
             <p className="text-muted-foreground">
               Currently working as a Backend Developer Intern at NextBigE, where
               I develop REST APIs using Django REST Framework. I have built
-              multiple full-stack projects including LilChat, Crazy LMS, and
+              multiple full-stack projects including LilChat, LMS, and
               Bookstore while continuously improving my problem-solving skills
               through Data Structures and Algorithms.
             </p>

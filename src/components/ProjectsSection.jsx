@@ -16,7 +16,7 @@ const projects = [
 
   {
     id: 2,
-    title: "Crazy LMS - AI Course Generator",
+    title: "LMS - AI Course Generator",
     description:
       "An AI-powered learning management system that generates structured learning courses from user prompts using OpenAI APIs. Includes authentication and course management features.",
     image: crazylms,
