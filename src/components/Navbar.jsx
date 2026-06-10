@@ -1,5 +1,6 @@
-import { cn } from "@/lib/utils.js";
-import { Menu, X, Moon, Sun } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Menu, X, Github, Linkedin } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -10,7 +11,7 @@ const navItems = [
   { name: "Contact", href: "#contact" },
 ];
 
-export const Navbar = ({ isDark, toggleTheme }) => {
+export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -20,83 +21,114 @@ export const Navbar = ({ isDark, toggleTheme }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-secondary/80 backdrop-blur-md shadow-lg" : "py-5"
+        "fixed w-full z-50 transition-all duration-300",
+        isScrolled
+          ? "py-3 bg-background/80 backdrop-blur-md border-b border-border"
+          : "py-5"
       )}
     >
-      <div className="container mx-auto max-w-6xl px-4 flex items-center justify-between">
+      <div className="container mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
         <a
-          className="text-xl font-bold text-primary flex items-center"
           href="#hero"
+          className="text-xl md:text-2xl font-bold"
         >
-          <span className="relative z-10">
-            SS
-          </span>
+          <span className="text-primary">Simaran</span>
+          <span className="text-foreground"> Portfolio</span>
         </a>
 
-        {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => (
             <a
-              key={key}
+              key={item.name}
               href={item.href}
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
+              className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
             </a>
           ))}
-          <button
-            onClick={toggleTheme}
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Toggle Theme"
-          >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
         </div>
 
-        <div className="flex items-center gap-4 md:hidden z-50">
+        {/* Social & Toggle & Mobile Button */}
+        <div className="flex items-center gap-3">
+          {/* Desktop Social */}
+          <div className="hidden md:flex items-center gap-3 mr-2">
+            <a
+              href="https://github.com/Simmi222"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <Github size={20} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/simaran-sahu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary transition-colors"
+            >
+              <Linkedin size={20} />
+            </a>
+          </div>
+
+          {/* Theme Toggle */}
+          <ThemeToggle />
+
+          {/* Mobile Button */}
           <button
-            onClick={toggleTheme}
-            className="p-2 text-muted-foreground hover:text-primary transition-colors"
-            aria-label="Toggle Theme"
-          >
-            {isDark ? <Sun size={24} /> : <Moon size={24} />}
-          </button>
-          <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
-            className="p-2 text-muted-foreground"
-            aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden z-50 ml-2"
+            aria-label="Toggle Menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
+            "fixed inset-0 bg-background/95 backdrop-blur-md flex flex-col items-center justify-center gap-8 transition-all duration-300 md:hidden",
             isMenuOpen
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
-              <a
-                key={key}
-                href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </a>
-            ))}
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setIsMenuOpen(false)}
+              className="text-2xl hover:text-primary transition-colors"
+            >
+              {item.name}
+            </a>
+          ))}
+
+          <div className="flex gap-5 pt-4">
+            <a
+              href="https://github.com/Simmi222"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={24} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/simaran-sahu"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin size={24} />
+            </a>
           </div>
         </div>
       </div>
