@@ -27,6 +27,21 @@ const skills = [
   { name: "MongoDB", level: 85, category: "database" },
   { name: "PostgreSQL", level: 80, category: "database" },
 
+  // AI / LLM
+  { name: "Generative AI", level: 85, category: "ai-llm" },
+  { name: "Large Language Models (LLMs)", level: 85, category: "ai-llm" },
+  { name: "OpenAI API", level: 90, category: "ai-llm" },
+  { name: "Google Gemini API", level: 90, category: "ai-llm" },
+  { name: "Prompt Engineering", level: 85, category: "ai-llm" },
+  { name: "AI Integration", level: 90, category: "ai-llm" },
+
+  // AI / ML Libraries
+  { name: "Face Recognition", level: 85, category: "ai-ml" },
+  { name: "dlib", level: 80, category: "ai-ml" },
+  { name: "NumPy", level: 85, category: "ai-ml" },
+  { name: "Computer Vision", level: 80, category: "ai-ml" },
+  { name: "Facial Recognition", level: 85, category: "ai-ml" },
+
   // Tools
   { name: "Git", level: 90, category: "tools" },
   { name: "GitHub", level: 90, category: "tools" },
@@ -43,12 +58,14 @@ const skills = [
 ];
 
 const categories = [
-  "languages",
-  "frontend",
-  "backend",
-  "database",
-  "tools",
-  "concepts",
+  { id: "frontend", label: "Frontend" },
+  { id: "backend", label: "Backend" },
+  { id: "ai-llm", label: "AI / LLM" },
+  { id: "ai-ml", label: "AI / ML Libraries" },
+  { id: "languages", label: "Languages" },
+  { id: "database", label: "Database" },
+  { id: "tools", label: "Tools" },
+  { id: "concepts", label: "Concepts" },
 ];
 
 export const SkillsSection = () => {
@@ -76,16 +93,16 @@ export const SkillsSection = () => {
         <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map((category) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
               className={cn(
-                "px-5 py-2 rounded-full transition-all duration-300 capitalize",
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground"
-                  : "bg-card hover:bg-primary/10"
+                "px-5 py-2 rounded-full transition-all duration-300 font-medium text-sm",
+                activeCategory === category.id
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "bg-card hover:bg-primary/10 text-muted-foreground hover:text-foreground"
               )}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>

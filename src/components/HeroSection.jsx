@@ -44,7 +44,7 @@ export const HeroSection = () => {
             </h2>
 
             <p className="text-primary mt-2">
-              React • Node.js • Django • MongoDB • REST APIs
+              React • Node.js • Django • REST APIs • Generative AI
             </p>
           </div>
 

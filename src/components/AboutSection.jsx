@@ -20,7 +20,7 @@ export const AboutSection = () => {
               Computer Science Engineering student at Ajay Kumar Garg
               Engineering College. I enjoy building modern, responsive, and
               scalable web applications using React, Node.js, Express.js,
-              MongoDB, Django, and REST APIs.
+              MongoDB, Django, REST APIs, and Generative AI / LLMs.
             </p>
 
             <p className="text-muted-foreground">
