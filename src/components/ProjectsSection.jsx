@@ -1,7 +1,10 @@
 import { ArrowRight, ExternalLink, Github } from "lucide-react";
 import lilChat from "@/assets/lilChat.png";
+import lostandfound from "@/assets/lostandfound.png";
 import crazylms from "@/assets/crazylms.png";
 import bookstore from "@/assets/bookstore.png";
+import autoaid from "@/assets/autoaid.png";
+
 const projects = [
   {
     id: 1,
@@ -16,6 +19,17 @@ const projects = [
 
   {
     id: 2,
+    title: "Lost & Found AI - Missing Person Platform",
+    description:
+      "An AI-powered missing-person platform featuring face recognition using dlib and Modal to generate 128D embeddings and match photos. Built with role-based JWT auth, PostgreSQL, and Cloudinary.",
+    image: lostandfound,
+    tags: ["React", "Django REST", "PostgreSQL", "Python", "dlib / AI"],
+    demoUrl: "https://lostandfound-chi-teal.vercel.app/",
+    githubUrl: "https://github.com/Simmi222/lostandfound",
+  },
+
+  {
+    id: 3,
     title: "LMS - AI Course Generator",
     description:
       "An AI-powered learning management system that generates structured learning courses from user prompts using OpenAI APIs. Includes authentication and course management features.",
@@ -26,7 +40,7 @@ const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Bookstore Management System",
     description:
       "A MERN stack CRUD application for managing books, inventory, and records with seamless frontend-backend integration using REST APIs.",
@@ -34,6 +48,17 @@ const projects = [
     tags: ["React", "Node.js", "MongoDB", "Express"],
     demoUrl: "#",
     githubUrl: "https://github.com/Simmi222",
+  },
+
+  {
+    id: 5,
+    title: "AutoAid - AI Car Mechanic Chatbot",
+    description:
+      "An intelligent automotive diagnostic assistant powered by Google Gemini API and Django. Interprets vehicle issues, mechanic references, and symptoms to generate real-time problem diagnoses and troubleshooting steps.",
+    image: autoaid,
+    tags: ["React", "Django", "Gemini API", "AI Diagnosis", "REST API"],
+    demoUrl: "https://frontend-iota-two-hz41op248h.vercel.app/",
+    githubUrl: "https://github.com/Simmi222/CarChatbot",
   },
 ];
 

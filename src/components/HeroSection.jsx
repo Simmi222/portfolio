@@ -104,7 +104,7 @@ export const HeroSection = () => {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 max-w-4xl mx-auto">
             <div className="p-4 rounded-xl border border-border bg-card">
-              <h3 className="text-2xl font-bold text-primary">3+</h3>
+              <h3 className="text-2xl font-bold text-primary">5+</h3>
               <p className="text-sm text-muted-foreground">
                 Full Stack Projects
               </p>

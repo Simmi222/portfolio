@@ -26,9 +26,9 @@ export const AboutSection = () => {
             <p className="text-muted-foreground">
               Currently working as a Backend Developer Intern at NextBigE, where
               I develop REST APIs using Django REST Framework. I have built
-              multiple full-stack projects including LilChat, LMS, and
-              Bookstore while continuously improving my problem-solving skills
-              through Data Structures and Algorithms.
+              multiple full-stack projects including LilChat, Lost & Found AI,
+              AutoAid, LMS, and Bookstore while continuously improving my
+              problem-solving skills through Data Structures and Algorithms.
             </p>
 
             <p className="text-muted-foreground">
